@@ -1,1 +1,1 @@
-Test
+Just another coding repository for study reasons
