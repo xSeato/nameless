@@ -1,40 +1,33 @@
 package com.seato.nameless.data.entities;
 
 import jakarta.persistence.Entity;
+import jakarta.persistence.GeneratedValue;
 import jakarta.persistence.Id;
-import jakarta.persistence.JoinColumn;
-import jakarta.persistence.OneToMany;
 import lombok.Getter;
 import lombok.NoArgsConstructor;
 import lombok.Setter;
 
-import java.util.HashSet;
-import java.util.Set;
-
 @Entity
 @NoArgsConstructor
 @Getter
+@Setter
 public class Person {
     @Id
+    @GeneratedValue
     private int id;
 
-    @Setter
     private String firstName;
 
-    @Setter
     private String lastName;
 
-    @Setter
-    private String contactMail;
+    private String mail;
 
-    @OneToMany
-    @JoinColumn
-    private Set<Order> orders = new HashSet<>();
+    private String password;
 
     public Person(String f, String l, String c){
         this();
         this.firstName = f;
         this.lastName= l;
-        this.contactMail = c;
+        this.mail = c;
     }
 }
